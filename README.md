@@ -4,93 +4,73 @@
 
 <div align="center">
     <a href="https://badge.fury.io/py/tensorart"><img src="https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=0.1&x2=0" alt="PyPI version" height="18"></a>
-    <a href="https://github.com/EchterAlsFake/PHUB/workflows/"><img src="https://github.com/EchterAlsFake/PHUB/actions/workflows/tests.yml/badge.svg" alt="API Tests"/></a>
+    <a href="https://github.com/XZeipher/TensorAI/workflows/"><img src="https://github.com/XZeipher/TensorAI/actions/workflows/tests.yml/badge.svg" alt="API Tests"/></a>
 </div>
 
 <br>
 <br>
-PHUB is a hybrid API for Pornhub. It is able to communicate with Pornhub
-using both web-scraping and Pornhub's HubTraffic API. It is
-able to access most used or useful PH features, such as video searching,
-accessing account features, video downloading, and a lot more.
+TensorART is a hybrid API for tensor.art. It is able to communicate with Tensor
+using web-scraping.. It is
+able to access most used or useful ai features, such as text2img, img2img , upscale, and a lot more.
 
 > [!WARNING]
-> This project is probably against Pornhub TOS. Use at your own risks.
+> This project is probably against TensorART TOS. Use at your own risks.
 
 ## Installation
 
 - Install using `pip` (python `3.11` or higher required, recommended version): 
 ```shell
-pip install --upgrade phub
+pip install --upgrade TensorART
 ```
 
 - Or from this repo to get the latest fixes/features:
 ```shell
-pip install --upgrade git+https://github.com/EchterAlsFake/PHUB.git
+pip install --upgrade git+https://github.com/XZeipher/TensorAI.git
 ```
 
 - Or, for python 3.10 and higher.
 ```shell
-pip install --upgrade git+https://github.com/EchterAlsFake/PHUB.git@py-3.10
+pip install --upgrade git+https://github.com/XZeipher/TensorAI.git@py-3.10
 ```
 
 - Or, for even lower python versions, there is automatic branch with several features removed (might be unstable).
 ```shell
-pip install --upgrade git+https://github.com/EchterAlsFake/PHUB.git@compat
+pip install --upgrade git+https://github.com/XZeipher/TensorAI.git@compat
 ```
-
-## Usage from command line
-```shell
-# Download a single video
-py -m phub https://www.pornhub.com/view_video.php?viewkey=abcdef
-# Download multiple videos from a text file
-py -m phub path/to/file.txt --quality best --downloader threaded --output video.mp4
-```
-###### Note: It does not matter how the URLs in the files are aranged, preferably one per line.
 
 ## Quickstart
 
 > [!NOTE]
-> You can find the docs on this project [here](https://phub.readthedocs.io).
+> You can find the docs on this project [here](https://tensorapi.onrender.com/docs).
 
 ```python
-import phub
-from phub.locals import *
+from TensorART import TensorClient
+import aiohttp,aiofiles
 
 # Initialise a client
-client = phub.Client()
+client = TensorClient()
 
-# Fetch and download a video
-video = client.get('https://...')
-video.download('my-video.mp4', Quality.BEST)
+# Create ai image
+image_url = await client.create(model_id=1,prompt="blonde girl sitting in garden")
 
-# Fetch user videos
-user = client.get_user('this-user')
-for video in user.videos:
-    print(video.title)
+# save image binary data
+async with aiohttp.ClientSession as session:
+    async with session.get(image_url) as response:
+        async with aiofiles.open('image.png','wb') as f:
+            await f.write(await response.content)
 
-# Perform a research
-for video in client.search('my-query'):
-    print(video.title)
+# image will be saved as image.png
 
-# Connect to an account
-client = phub.Client('my-username', 'my-password')
-
-# Access account history, liked and recommended stuff
-client.account.watched
-client.account.liked
-client.account.recommended
 ```
 
 # Note
-<strong>This repository was initiated and maintained by [Egsagon](https://github.com/Egsagon)
-He doesn't have any time to maintain this and transferred me the ownership.
-I'll do my best to maintain this repository functional.</strong>
+<strong>This repository is initiated and maintained by [XZeipher](https://github.com/XZeipher)
+</strong>
 
 
 ## License
 
-PHUB uses GPLv3. See the `LICENSE` file.
+TensorART uses GPLv3. See the `LICENSE` file.
 
 ## Contributing
 
