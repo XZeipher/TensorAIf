@@ -4,7 +4,6 @@
 
 <div align="center">
     <a href="https://badge.fury.io/py/tensorart"><img src="https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=0.1&x2=0" alt="PyPI version" height="18"></a>
-    <a href="https://github.com/XZeipher/TensorAI/workflows/"><img src="https://github.com/XZeipher/TensorAI/actions/workflows/tests.yml/badge.svg" alt="API Tests"/></a>
 </div>
 
 <br>
