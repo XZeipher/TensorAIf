@@ -6,11 +6,12 @@
     <a href="https://badge.fury.io/py/tensorart"><img src="https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=0.1&x2=0" alt="PyPI version" height="18"></a>
 </div>
 
-<br>
-<br>
+
+<div>
 TensorART is a hybrid API for tensor.art. It is able to communicate with Tensor
 using web-scraping.. It is
 able to access most used or useful ai features, such as text2img, img2img , upscale, and a lot more.
+</div>
 
 > [!WARNING]
 > This project is probably against TensorART TOS. Use at your own risks.
