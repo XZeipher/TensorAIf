@@ -12,10 +12,10 @@ TensorART is a hybrid API for tensor.art. It is able to communicate with Tensor
 using web-scraping.. It is
 able to access most used or useful ai features, such as text2img, img2img , upscale, and a lot more.
 </div>
-
+<div>
 > [!WARNING]
 > This project is probably against TensorART TOS. Use at your own risks.
-
+</div>
 ## Installation
 
 - Install using `pip` (python `3.11` or higher required, recommended version): 
